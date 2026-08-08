@@ -1,0 +1,21 @@
+for _ in range(10):
+        # Check if the chosen movie number exists in the movies table
+        c.execute("SELECT MOVIE_NAME, CHARGE FROM movies WHERE MOVIE_NAME = 'RRR'")
+        result = c.fetchone()
+
+        if result:
+            # Your existing code for ticket booking
+            vr = "KP"
+            t = 1
+            movie_name, charge = result[0], result[1]
+            total_cost = t * charge  # Calculating the total cost based on charge per ticket
+            seat_number = randint(1, 100)  # Generate a random seat number
+
+            # Inserting data into Viewers table with correct PAID value
+            c.execute('''INSERT INTO Viewers (NAME, Ticket, MOVIE_NAME, SEAT_NO, PAID) 
+                    VALUES (%s, %s, %s, %s, %s)''', (vr, t, movie_name, seat_number, total_cost))
+            con.commit()
+            print("Ticket booked successfully for movie: RRR")
+        else:
+            print("Invalid movie selection: RRR")
+

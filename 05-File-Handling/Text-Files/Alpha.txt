@@ -1,0 +1,10 @@
+You need to ensure the file exists before attempting to read from it.
+You should handle exceptions gracefully when opening the file for reading.
+You must close the file after you have finished reading from it.
+You can use the "with" statement in Python to automatically close the file after reading.
+You might encounter encoding errors if the file contains characters not supported by the chosen encoding.
+When writing to a file, you should use the appropriate mode ('w' for writing, 'a' for appending).
+Always check for permissions before attempting to write to a file.
+Remember to handle cases where the file path might be invalid or inaccessible.
+Consider using context managers to ensure proper file handling and resource management.
+Testing with files of varying sizes and contents can help uncover potential issues.
