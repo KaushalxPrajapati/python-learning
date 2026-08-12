@@ -3,19 +3,14 @@
 # "Negative" if the number is less than 0
 # "Zero" if the number is exactly 0
 
-
-def check_number():
-    num = int(input("Enter an Integer Number: "))
-
-    if isinstance(num, int):
-        if num > 0:
-            return "Positive(+)"
-        elif num < 0:
-            return "Negative(-)"
-        else:
-            return "Zero(0)"
+def check_number(num):
+    if num > 0:
+        return "Positive(+)"
+    elif num < 0:
+        return "Negative(-)"
     else:
-        return "Not an Integer!"
+        return "Zero(0)"
 
-
-print(check_number())
+while True:
+    num = int(input("Enter an Integer Number: "))
+    print(check_number(num))

@@ -1,22 +1,29 @@
 # Problem: Create a program that takes a student's marks as input and prints their result.
 
+
 def result():
-    try:
-        while True:
+    while True:
+        try:
             marks = int(input("Enter Student Marks: "))
-            if marks < 0 or type(marks) == "str":
-                return "Invalid"
-            elif marks >= 90 and marks <= 100:
-                return "Grade A"
-            elif marks >= 75 and marks < 90:
-                return "Grade B"
-            elif marks >= 50 and marks < 75:
-                return "Grade C"
+
+            if marks < 0 or marks > 100:
+                print("Invalid marks. Enter marks between 0 and 100.")
+                continue
+
+            if marks >= 90:
+                print("Grade A")
+
+            elif marks >= 75:
+                print("Grade B")
+
+            elif marks >= 50:
+                print("Grade C")
+
             else:
-                return "Failed!"
-    except ValueError:
-        print("Error...")
+                print("Failed!")
+
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 
 result()
-print("hello")
